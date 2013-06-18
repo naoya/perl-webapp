@@ -1,0 +1,8 @@
+{
+  "sha": "cba08f94ddc504109501d0651a3fa5e67c638676",
+  "sources": {
+    "yum": {
+      "locked_version": "2.1.0"
+    }
+  }
+}

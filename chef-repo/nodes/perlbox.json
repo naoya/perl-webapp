@@ -1,0 +1,15 @@
+{
+    "perl": {
+        "user": {
+            "name": "vagrant",
+            "home": "/home/vagrant"
+        },
+        "version": "5.18.0"
+    },
+    "run_list":[
+        "recipe[yum::epel]",
+        "recipe[supervisord]",
+        "recipe[perlbrew]",
+        "recipe[perl-modules]"
+    ]
+}
