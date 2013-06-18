@@ -2,13 +2,13 @@ use strict;
 use warnings;
 use Cinnamon::DSL;
 
-set application => 'md2inao';
-set repository  => 'git://github.com/naoya/md2inao.pl.git';
+set application => 'perl-webapp';
+set repository  => 'git://github.com/naoya/perl-webapp.git';
 set user        => 'vagrant';
 set password    => '';
 
 role development => ['perlbox'], {
-    deploy_to    => '/home/vagrant/sandbox',
+    deploy_to    => '/home/vagrant/perl-webapp',
     branch       => 'master',
 };
 
@@ -46,19 +46,19 @@ task server => {
     start => sub {
         my ($host, @args) = @_;
         remote {
-            sudo "supervisorctl start md2inao";
+            sudo "supervisorctl start perl-webapp";
         } $host;
     },
     stop => sub {
         my ($host, @args) = @_;
         remote {
-            sudo "supervisorctl stop md2inao";
+            sudo "supervisorctl stop perl-webapp";
         } $host;
     },
     restart => sub {
         my ($host, @args) = @_;
         remote {
-            run "kill -HUP `cat /var/tmp/md2inao.pid`";
+            run "kill -HUP `cat /var/tmp/perl-webapp.pid`";
         } $host;
     },
     status => sub {
