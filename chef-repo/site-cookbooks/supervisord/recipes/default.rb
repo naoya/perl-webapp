@@ -1,11 +1,17 @@
 #
 # Cookbook Name:: supervisord
 # Recipe:: default
-#
-# Copyright 2013, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
+
+rpmfile = "supervisor-3.0a12-2.el6.noarch.rpm"
+cookbook_file "#{Chef::Config[:file_cache_path]}/#{rpmfile}" do
+  mode 00644
+end
+
+package "supervisor" do
+  source "#{Chef::Config[:file_cache_path]}/#{rpmfile}"
+  action :install
+end
+
 package "supervisor" do
   action :install
 end
