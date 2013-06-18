@@ -51,15 +51,15 @@ serverurl=unix:///var/tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 ;logfile_backups=10          ; # of logfile backups (default 10)
 
 
-[program:md2inao]
+[program:perl-webapp]
 user=vagrant
-directory=/home/vagrant/md2inao
-command=/home/vagrant/md2inao/md2inao.run
+directory=/home/vagrant/perl-webapp
+command=/home/vagrant/perl-webapp/app.run
 autostart=true
 autorestart=true
 log_stdout=true
 log_stderr=true
-stdout_logfile=/var/log/supervisor/md2inao.log
-stderr_logfile=/var/log/supervisor/md2inao.err
+stdout_logfile=/var/log/supervisor/perl-webapp.log
+stderr_logfile=/var/log/supervisor/perl-webapp.err
 stdout_logfile_maxbytes = 5MB
 stderr_logfile_maxbytes = 5MB

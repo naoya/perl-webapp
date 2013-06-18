@@ -5,4 +5,4 @@ source ~/perl5/perlbrew/etc/bashrc
 CURDIR=`dirname $0`
 cd $CURDIR
 
-exec carton exec -- start_server --port 5001 --pid-file=/var/tmp/md2inao.pid -- plackup -E production -s Starman --workers=2 --max-requests=10
+exec carton exec -- start_server --port 5001 --pid-file=/var/tmp/perl-webapp.pid -- plackup -E production -s Starman
